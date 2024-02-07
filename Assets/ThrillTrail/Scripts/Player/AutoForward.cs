@@ -8,8 +8,18 @@ using UnityEngine;
 public class AutoForward : MonoBehaviour
 {
     [SerializeField] private float _Speed;
+    
+    private bool activated = false;
     private void Update()
     {
-        transform.Translate(Vector3.forward * (_Speed * Time.deltaTime));
+        if (activated)
+        {
+            transform.Translate(Vector3.forward * (_Speed * Time.deltaTime));
+        }
+    }
+    
+    public void Activate(bool value)
+    {
+        activated = value;
     }
 }

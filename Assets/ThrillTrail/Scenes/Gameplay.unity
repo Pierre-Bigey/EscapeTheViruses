@@ -250,7 +250,6 @@ MonoBehaviour:
   platformPrefab: {fileID: 1370728089000928646, guid: e22a0c8891fc87748acfb0f30d1f176e, type: 3}
   platformParent: {fileID: 138542482}
   spawnDistance: 20
-  platformScale: 50
 --- !u!4 &138542482
 Transform:
   m_ObjectHideFlags: 0
@@ -279,7 +278,9 @@ GameObject:
   - component: {fileID: 1245530577}
   - component: {fileID: 1245530576}
   - component: {fileID: 1245530580}
-  m_Layer: 0
+  - component: {fileID: 1245530581}
+  - component: {fileID: 1245530582}
+  m_Layer: 3
   m_Name: Player
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -388,6 +389,31 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _Speed: 5
+--- !u!114 &1245530581
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1245530575}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6525637571e7f5241937cb4cc0b4886b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  corridorWidth: 1.5
+--- !u!114 &1245530582
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1245530575}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 28a1e0c9c7b38e94985342759a3b9b58, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1602023441
 GameObject:
   m_ObjectHideFlags: 0
