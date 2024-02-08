@@ -6,10 +6,15 @@ using UnityEngine;
 public class StartMenuController : MonoBehaviour
 {
     private SceneLoaderService _sceneLoaderService;
+    
+    [SerializeField] private GameObject _MainScreen;
+    [SerializeField] private GameObject _SettingsScreen;
     // Start is called before the first frame update
     void Start()
     {
         _sceneLoaderService = ServiceLocator.Instance.Get<SceneLoaderService>();
+        _MainScreen.SetActive(true);
+        _SettingsScreen.SetActive(false);
     }
 
     // Update is called once per frame
@@ -26,7 +31,8 @@ public class StartMenuController : MonoBehaviour
     
     public void SettingsButtonPressed()
     {
-        Debug.Log("Settings button pressed!");
+        _SettingsScreen.SetActive(true);
+        _MainScreen.SetActive(false);
     }
     
     public void ExitButtonPressed()
@@ -34,4 +40,6 @@ public class StartMenuController : MonoBehaviour
         Debug.Log("Exit button pressed!");
         Application.Quit();
     }
+    
+    
 }
