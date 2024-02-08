@@ -9,11 +9,11 @@ EditorBuildSettings:
     path: Assets/ThrillTrail/Scenes/InitScene.unity
     guid: ec68fec16b5e0db42bc7323b21b0e55a
   - enabled: 1
-    path: Assets/ThrillTrail/Scenes/Gameplay.unity
-    guid: ae52952799a113041aa47e577e530361
-  - enabled: 1
     path: Assets/ThrillTrail/Scenes/MainMenu.unity
     guid: 94f30920651bed04584b3b2780dbdc9b
+  - enabled: 1
+    path: Assets/ThrillTrail/Scenes/Gameplay.unity
+    guid: ae52952799a113041aa47e577e530361
   m_configObjects:
     com.unity.addressableassets: {fileID: 11400000, guid: ff5f2a3c7b69af346972211c6b410482, type: 2}
     com.unity.localization.settings: {fileID: 11400000, guid: b4236a24dd7fb084eb49fc41e6567310, type: 2}

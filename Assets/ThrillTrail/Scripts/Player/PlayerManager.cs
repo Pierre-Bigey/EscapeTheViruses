@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 namespace ThrillTrail.Player
 {
@@ -12,6 +13,8 @@ namespace ThrillTrail.Player
 
         [SerializeField]private float speed = 5f;
         [SerializeField] private float speedIncreaseRatio = 0.01f;
+        
+        [SerializeField] private GameOverlayViewController gameOverlayViewController;
         
         private bool _isDead = false;
         private void Start()
@@ -27,6 +30,7 @@ namespace ThrillTrail.Player
             {
                 GoForward();
                 IncreaseSpeed();
+                gameOverlayViewController.UpdateScore((int)transform.position.z);
             }
         }
         
@@ -57,6 +61,7 @@ namespace ThrillTrail.Player
         {
             _isDead = true;
             _playerMovement.Activate(false);
+            gameOverlayViewController.ShowDeathPanel();
             Debug.Log("Player died!");
         }
     }

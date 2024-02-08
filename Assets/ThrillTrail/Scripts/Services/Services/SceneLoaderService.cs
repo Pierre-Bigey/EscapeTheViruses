@@ -6,9 +6,19 @@ namespace ThrillTrail.Services
 {
     public class SceneLoaderService : IGameService
     {
-        public void LoadScene(string sceneName)
+        private void LoadScene(string sceneName)
         {
             UnityEngine.SceneManagement.SceneManager.LoadScene(sceneName);
+        }
+        
+        public void LoadGamePlayScene()
+        {
+            LoadScene("Gameplay");
+        }
+        
+        public void LoadMainMenuScene()
+        {
+            LoadScene("MainMenu");
         }
     }
 }
