@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5be51871efa6c3e4eae1703925c8f5ac, type: 3}
+  m_Name: StartUI
+  m_EditorClassIdentifier: 
+  m_SharedTableData: {fileID: 11400000, guid: e94ea9f17a50c104a992d28979884dee, type: 2}
+  m_Tables:
+  - {fileID: 11400000, guid: f5f02f2ae9e29bd47a211a11d863c00e, type: 2}
+  - {fileID: 11400000, guid: c5350e77973439148be70a5866e705c7, type: 2}
+  - {fileID: 11400000, guid: 3c75ac9e039e44f4cb4ffc91812abed6, type: 2}
+  - {fileID: 11400000, guid: 073615e1713ea9945b48a9fb2dd35159, type: 2}
+  m_Extensions: []
+  m_Group: String Table
+  references:
+    version: 2
+    RefIds: []

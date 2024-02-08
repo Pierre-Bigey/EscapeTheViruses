@@ -2,36 +2,62 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-[RequireComponent(typeof(PlayerMovement),typeof(AutoForward))]
-public class PlayerManager : MonoBehaviour
+
+namespace ThrillTrail.Player
 {
-    private PlayerMovement _playerMovement;
-    private AutoForward _autoForward;
-    private void Start()
+    [RequireComponent(typeof(PlayerMovement))]
+    public class PlayerManager : MonoBehaviour
     {
-        _playerMovement = GetComponent<PlayerMovement>();
-        _autoForward = GetComponent<AutoForward>();
-        _playerMovement.Activate(true);
-        _autoForward.Activate(true);
-    }
+        private PlayerMovement _playerMovement;
 
+        [SerializeField]private float speed = 5f;
+        [SerializeField] private float speedIncreaseRatio = 0.01f;
+        
+        private bool _isDead = false;
+        private void Start()
+        {
+            _playerMovement = GetComponent<PlayerMovement>();
+            _playerMovement.Activate(true);
 
-    private void OnCollisionEnter(Collision other)
-    {
-        /*if (other.gameObject.layer == LayerMask.NameToLayer("Danger"))
-        {
-            Die();
-        }*/
-        if (other.gameObject.CompareTag("Danger"))
-        {
-            Die();
         }
-    }
 
-    private void Die()
-    {
-        _playerMovement.Activate(false);
-        _autoForward.Activate(false);
-        Debug.Log("Player died!");
+        private void Update()
+        {
+            if(!_isDead)
+            {
+                GoForward();
+                IncreaseSpeed();
+            }
+        }
+        
+        private void GoForward()
+        {
+            transform.Translate(Vector3.forward * (speed * Time.deltaTime));
+        }
+
+        private void IncreaseSpeed()
+        {
+            speed += Time.deltaTime * speedIncreaseRatio;
+        }
+
+        private void OnCollisionEnter(Collision other)
+        {
+            /*if (other.gameObject.layer == LayerMask.NameToLayer("Danger"))
+            {
+                Die();
+            }*/
+            Debug.Log("On collision enter with " + other.gameObject.name);
+            if (other.gameObject.CompareTag("Danger"))
+            {
+                Die();
+            }
+        }
+
+        private void Die()
+        {
+            _isDead = true;
+            _playerMovement.Activate(false);
+            Debug.Log("Player died!");
+        }
     }
 }
