@@ -11,7 +11,8 @@ namespace ThrillTrail.Player
     {
         private PlayerMovement _playerMovement;
 
-        [SerializeField]private float speed = 5f;
+        public float speed { private set; get; }
+        [SerializeField] private float initialSpeed = 5f;
         [SerializeField] private float speedIncreaseRatio = 0.01f;
         
         [SerializeField] private GameOverlayViewController gameOverlayViewController;
@@ -22,6 +23,7 @@ namespace ThrillTrail.Player
             _playerMovement = GetComponent<PlayerMovement>();
             _playerMovement.Activate(true);
 
+            speed = initialSpeed;
         }
 
         private void Update()
@@ -60,6 +62,7 @@ namespace ThrillTrail.Player
         private void Die()
         {
             _isDead = true;
+            speed = 0;
             _playerMovement.Activate(false);
             gameOverlayViewController.ShowDeathPanel();
             Debug.Log("Player died!");
