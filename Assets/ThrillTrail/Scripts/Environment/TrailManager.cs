@@ -37,7 +37,7 @@ namespace ThrillTrail.Trail
             platformLength = platformPrefab.transform.localScale.z;
             platformWidth = platformPrefab.transform.localScale.x;
             
-            lastPlatformPos = platformParent.position;
+            lastPlatformPos = platformParent.position + 20*Vector3.forward;
             currentPlatform = Instantiate(platformPrefab, lastPlatformPos-Vector3.forward*platformLength, Quaternion.identity, platformParent);
             nextPlatform = Instantiate(platformPrefab, lastPlatformPos, Quaternion.identity, platformParent);
         }
@@ -46,6 +46,7 @@ namespace ThrillTrail.Trail
         {
             if (Vector3.Distance(player.position, lastPlatformPos) < spawnDistance)
             {
+                Debug.Log("Spawnin platform"+player.position+" "+lastPlatformPos);
                 RemovePreviousPlatform();
                 SpawnPlatform();
             }

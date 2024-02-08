@@ -12,9 +12,8 @@ GameObject:
   - component: {fileID: 3763316538518708135}
   - component: {fileID: 7383077902221543012}
   - component: {fileID: 7300963562797051655}
-  - component: {fileID: -1649393615479073022}
   m_Layer: 0
-  m_Name: Platform
+  m_Name: Trail
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -106,19 +105,3 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &-1649393615479073022
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1370728089000928646}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fbb0a1d10149ea64384a46126dcdcd52, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  probabilityOfTwoDangers: 0.9
-  dangerPrefab: {fileID: 2423715650932816175, guid: 8a2aba164d328bb41a6d9c022ab8d61b, type: 3}
-  dangerSpacing: 5
-  xSpacing: 1.5

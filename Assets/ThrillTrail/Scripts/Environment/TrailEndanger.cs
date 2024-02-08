@@ -23,12 +23,17 @@ namespace ThrillTrail.Trail
 
         [Tooltip("The x space for dangers to spawn on the platform")] [SerializeField]
         private float xSpacing = 1.5f;
+        
+        [Tooltip("The altitude at which the dangers will spawn")] [SerializeField]
+        private float dangerAltitude = 1.2f;
 
         private float[] xPositions;
+        private float childLocalScaleZ;
 
-        private void OnEnable()
+        private void Awake()
         {
             xPositions = new float[3] { -xSpacing, 0, xSpacing };
+            childLocalScaleZ = transform.GetChild(0).localScale.z;
             //EndangerPlatform();
         }
 
@@ -37,13 +42,14 @@ namespace ThrillTrail.Trail
         /// </summary>
         public void EndangerPlatform()
         {
-            for (float z = 0; z < transform.localScale.z; z += dangerSpacing)
+            Debug.Log("Endenger platform");
+            for (float z = 0; z < childLocalScaleZ; z += dangerSpacing)
             {
                 int randomIndex = Random.Range(0, xPositions.Length);
                 float x = xPositions[randomIndex];
-                Vector3 cubePosition = new Vector3(x, 0.5f, z + transform.position.z - transform.localScale.z / 2);
-                var danger = Instantiate(dangerPrefab, cubePosition, Quaternion.identity);
-                danger.transform.parent = transform;
+                Vector3 dangerPosition = new Vector3(x, dangerAltitude, z + childLocalScaleZ - childLocalScaleZ / 2);
+                var danger = Instantiate(dangerPrefab, dangerPosition, Quaternion.identity);
+                danger.transform.parent = transform.parent;
 
                 if (Random.value <= probabilityOfTwoDangers)
                 {
@@ -54,9 +60,9 @@ namespace ThrillTrail.Trail
                     }
 
                     x = xPositions[secondRandomIndex];
-                    cubePosition = new Vector3(x, 0.5f, z + transform.position.z - transform.localScale.z / 2);
-                    danger = Instantiate(dangerPrefab, cubePosition, Quaternion.identity);
-                    danger.transform.parent = transform;
+                    dangerPosition = new Vector3(x, dangerAltitude, z + childLocalScaleZ - childLocalScaleZ / 2);
+                    danger = Instantiate(dangerPrefab, dangerPosition, Quaternion.identity);
+                    danger.transform.parent = transform.parent;
                 }
             }
         }
