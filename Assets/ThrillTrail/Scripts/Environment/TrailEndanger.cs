@@ -35,6 +35,7 @@ namespace ThrillTrail.Trail
             xPositions = new float[3] { -xSpacing, 0, xSpacing };
             childLocalScaleZ = transform.GetChild(0).localScale.z;
             //EndangerPlatform();
+            Debug.Log("ChildLocalScaleZ: " + childLocalScaleZ);
         }
 
         /// <summary>
@@ -45,11 +46,7 @@ namespace ThrillTrail.Trail
             Debug.Log("Endenger platform");
             for (float z = 0; z < childLocalScaleZ; z += dangerSpacing)
             {
-                int randomIndex = Random.Range(0, xPositions.Length);
-                float x = xPositions[randomIndex];
-                Vector3 dangerPosition = new Vector3(x, dangerAltitude, z + childLocalScaleZ - childLocalScaleZ / 2);
-                var danger = Instantiate(dangerPrefab, dangerPosition, Quaternion.identity);
-                danger.transform.parent = transform.parent;
+                int randomIndex = SummonDanger(z);
 
                 if (Random.value <= probabilityOfTwoDangers)
                 {
@@ -59,12 +56,25 @@ namespace ThrillTrail.Trail
                         secondRandomIndex = Random.Range(0, xPositions.Length);
                     }
 
-                    x = xPositions[secondRandomIndex];
-                    dangerPosition = new Vector3(x, dangerAltitude, z + childLocalScaleZ - childLocalScaleZ / 2);
-                    danger = Instantiate(dangerPrefab, dangerPosition, Quaternion.identity);
-                    danger.transform.parent = transform.parent;
+                    float x = xPositions[secondRandomIndex];
+                    SummonDanger(x, z);
                 }
             }
+        }
+
+        private int SummonDanger(float zvalue)
+        {
+            int randomIndex = Random.Range(0, xPositions.Length);
+            float x = xPositions[randomIndex];
+            Vector3 dangerPosition = new Vector3(x, dangerAltitude, zvalue + transform.position.z - childLocalScaleZ / 2);
+            Instantiate(dangerPrefab, dangerPosition, Quaternion.identity, transform);
+            return randomIndex;
+        }
+        
+        private void SummonDanger(float xvalue, float zvalue)
+        {
+            Vector3 dangerPosition = new Vector3(xvalue, dangerAltitude, zvalue + transform.position.z - childLocalScaleZ / 2);
+            Instantiate(dangerPrefab, dangerPosition, Quaternion.identity, transform);
         }
     }
 }
