@@ -3024,9 +3024,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 28a1e0c9c7b38e94985342759a3b9b58, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 0
   initialSpeed: 5
-  speedIncreaseRatio: 0.1
+  speedIncreaseRatio: 0.2
   gameOverlayViewController: {fileID: 138865777}
 --- !u!114 &6367566384384204307
 MonoBehaviour:

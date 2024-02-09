@@ -19,7 +19,7 @@ public class AudioManager : MonoBehaviour
     
     SFXService _sfxService;
 
-    private void OnEnable()
+    private void Awake()
     {
         _sfxService = ServiceLocator.Instance.Get<SFXService>();
         _sfxService._PlaySFX += PlaySFX;

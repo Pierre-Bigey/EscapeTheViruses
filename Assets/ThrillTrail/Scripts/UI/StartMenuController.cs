@@ -37,8 +37,7 @@ public class StartMenuController : MonoBehaviour
     
     public void ExitButtonPressed()
     {
-        Debug.Log("Exit button pressed!");
-        Application.Quit();
+        _sceneLoaderService.ExitGame();
     }
     
     

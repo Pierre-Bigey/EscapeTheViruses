@@ -13,7 +13,7 @@ namespace ThrillTrail.Player
     {
         private PlayerMovement _playerMovement;
 
-        public float speed;//{ private set; get; }
+        public float speed{ private set; get; }
         [SerializeField] private float initialSpeed = 5f;
         [SerializeField] private float speedIncreaseRatio = 0.01f;
         
@@ -65,7 +65,7 @@ namespace ThrillTrail.Player
 
         private void OnCollisionEnter(Collision other)
         {
-            if (other.gameObject.CompareTag("Danger"))
+            if (other.gameObject.CompareTag("Danger") && !_isDead)
             {
                 Die();
             }
