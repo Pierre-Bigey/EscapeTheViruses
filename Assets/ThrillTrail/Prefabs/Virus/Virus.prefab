@@ -133,8 +133,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0c463b653ea81d9449e148110822f305, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _minRotationSpeed: 10
-  _maxRotationSpeed: 30
+  animate: 1
+  _minRotationSpeed: 20
+  _maxRotationSpeed: 100
   _minfloatSpeed: 2
   _maxfloatSpeed: 5
   _minfloatAmplitude: 0.05
@@ -254,7 +255,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: ca9ddc4e3a6511f4d92778c967c72cc0, type: 2}
+  - {fileID: 2100000, guid: 4097d21af5b4ce34c9940ea364770c2b, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
