@@ -38,9 +38,8 @@ namespace ThrillTrail.Player
         {
             speed = initialSpeed;
             _isDead = false;
-            ServiceLocator.Instance.Get<SFXService>().PlayGameplayMusic();
             _playerMovement.Activate(true);
-            
+            ServiceLocator.Instance.Get<SFXService>().PlayGameplayMusic();
         }
 
         private void Update()
@@ -75,11 +74,16 @@ namespace ThrillTrail.Player
         {
             _isDead = true;
             speed = 0;
+            
             _playerMovement.Activate(false);
+            
             gameOverlayViewController.ShowDeathPanel();
+            
+            //Update the high score
+            ServiceLocator.Instance.Get<PlayerPrefService>().SetInt("HighScore", (int)transform.position.z);
+            
             //Trigger the death SFX action
             ServiceLocator.Instance.Get<SFXService>().PlayDeathSFX();
-            Debug.Log("Player died!");
         }
     }
 }

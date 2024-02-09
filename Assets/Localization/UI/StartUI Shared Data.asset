@@ -14,7 +14,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_TableCollectionName: StartUI
   m_TableCollectionNameGuidString: e94ea9f17a50c104a992d28979884dee
-  m_Entries: []
+  m_Entries:
+  - m_Id: 681451166097408
+    m_Key: MainMenu/MainCanvas/MainScreen/Score/Text
+    m_Metadata:
+      m_Items: []
   m_Metadata:
     m_Items: []
   m_KeyGenerator:

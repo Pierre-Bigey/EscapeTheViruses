@@ -14,6 +14,7 @@ namespace ThrillTrail.Services
             // Register all your services next.
             ServiceLocator.Instance.Register(new SceneLoaderService());
             ServiceLocator.Instance.Register(new SFXService());
+            ServiceLocator.Instance.Register(new PlayerPrefService());
             /*ServiceLocator.Instance.Register<IMyGameServiceB>(new MyGameServiceB());
             ServiceLocator.Instance.Register<IMyGameServiceC>(new MyGameServiceC());*/
 
