@@ -8,7 +8,7 @@ namespace ThrillTrail.Services
     {
         private void LoadScene(string sceneName)
         {
-            UnityEngine.SceneManagement.SceneManager.LoadScene(sceneName);
+            UnityEngine.SceneManagement.SceneManager.LoadScene(sceneName, UnityEngine.SceneManagement.LoadSceneMode.Single);
         }
         
         public void LoadGamePlayScene()

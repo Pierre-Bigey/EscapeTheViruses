@@ -8,6 +8,7 @@ namespace ThrillTrail.Services
         public Action<AudioClip> _PlaySFX;
         public Action _PlayDeathSFX;
         public Action _PlayButtonClickedSFX;
+        public Action _PlayGameplayMusic;
         
         public void Play(AudioClip clip)
         {
@@ -23,5 +24,12 @@ namespace ThrillTrail.Services
         {
             _PlayButtonClickedSFX?.Invoke();
         }
+        
+        //Launch the gameplay music
+        public void PlayGameplayMusic()
+        {
+            _PlayGameplayMusic?.Invoke();
+        }
+        
     }
 }

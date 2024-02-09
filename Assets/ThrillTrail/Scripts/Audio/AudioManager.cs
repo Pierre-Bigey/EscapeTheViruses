@@ -19,12 +19,13 @@ public class AudioManager : MonoBehaviour
     
     SFXService _sfxService;
 
-    private void Start()
+    private void OnEnable()
     {
         _sfxService = ServiceLocator.Instance.Get<SFXService>();
         _sfxService._PlaySFX += PlaySFX;
         _sfxService._PlayDeathSFX += PlayDeathSFX;
         _sfxService._PlayButtonClickedSFX += PlayButtonClickedSFX;
+        _sfxService._PlayGameplayMusic += PlayGameplayMusic;
     }
 
     public void PlayDeathSFX()
@@ -47,6 +48,11 @@ public class AudioManager : MonoBehaviour
     {
         _musicSource.clip = musicClip;
         _musicSource.Play();
+    }
+    
+    public void PlayGameplayMusic()
+    {
+        PlayMusic(gameplayMusic);
     }
 
     

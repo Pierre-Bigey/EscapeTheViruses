@@ -13,7 +13,7 @@ namespace ThrillTrail.Player
     {
         private PlayerMovement _playerMovement;
 
-        public float speed { private set; get; }
+        public float speed;//{ private set; get; }
         [SerializeField] private float initialSpeed = 5f;
         [SerializeField] private float speedIncreaseRatio = 0.01f;
         
@@ -23,17 +23,24 @@ namespace ThrillTrail.Player
 
 
 
-        private void Start()
+        private void Awake()
         {
             _playerMovement = GetComponent<PlayerMovement>();
             speed = 0;
+        }
+
+        private void Start()
+        {
             StartEndlessRun();
         }
 
         public void StartEndlessRun()
         {
-            _playerMovement.Activate(true);
             speed = initialSpeed;
+            _isDead = false;
+            ServiceLocator.Instance.Get<SFXService>().PlayGameplayMusic();
+            _playerMovement.Activate(true);
+            
         }
 
         private void Update()
@@ -58,7 +65,6 @@ namespace ThrillTrail.Player
 
         private void OnCollisionEnter(Collision other)
         {
-            Debug.Log("On collision enter with " + other.gameObject.name);
             if (other.gameObject.CompareTag("Danger"))
             {
                 Die();
