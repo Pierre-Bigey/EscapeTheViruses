@@ -1,11 +1,13 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using ThrillTrail.Services;
 using UnityEngine;
 using UnityEngine.Serialization;
 
 namespace ThrillTrail.Player
 {
+    //Singleton script that manages the player's movement and speed
     [RequireComponent(typeof(PlayerMovement))]
     public class PlayerManager : MonoBehaviour
     {
@@ -18,11 +20,19 @@ namespace ThrillTrail.Player
         [SerializeField] private GameOverlayViewController gameOverlayViewController;
         
         private bool _isDead = false;
+
+
+
         private void Start()
         {
             _playerMovement = GetComponent<PlayerMovement>();
-            _playerMovement.Activate(true);
+            speed = 0;
+            StartEndlessRun();
+        }
 
+        public void StartEndlessRun()
+        {
+            _playerMovement.Activate(true);
             speed = initialSpeed;
         }
 
@@ -48,10 +58,6 @@ namespace ThrillTrail.Player
 
         private void OnCollisionEnter(Collision other)
         {
-            /*if (other.gameObject.layer == LayerMask.NameToLayer("Danger"))
-            {
-                Die();
-            }*/
             Debug.Log("On collision enter with " + other.gameObject.name);
             if (other.gameObject.CompareTag("Danger"))
             {
@@ -65,6 +71,8 @@ namespace ThrillTrail.Player
             speed = 0;
             _playerMovement.Activate(false);
             gameOverlayViewController.ShowDeathPanel();
+            //Trigger the death SFX action
+            ServiceLocator.Instance.Get<SFXService>().PlayDeathSFX();
             Debug.Log("Player died!");
         }
     }

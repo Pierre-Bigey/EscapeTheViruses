@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 namespace ThrillTrail.Player
@@ -8,6 +9,11 @@ namespace ThrillTrail.Player
         private int currentCorridor = 1; // Initial corridor index
 
         private bool activated = false;
+
+        private void Start()
+        {
+        }
+
         void Update()
         {
             if (activated && Input.touchCount > 0)
