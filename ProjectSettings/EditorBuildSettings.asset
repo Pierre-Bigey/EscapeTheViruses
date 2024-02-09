@@ -6,9 +6,6 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/ThrillTrail/Scenes/InitScene.unity
-    guid: ec68fec16b5e0db42bc7323b21b0e55a
-  - enabled: 1
     path: Assets/ThrillTrail/Scenes/MainMenu.unity
     guid: 94f30920651bed04584b3b2780dbdc9b
   - enabled: 1
