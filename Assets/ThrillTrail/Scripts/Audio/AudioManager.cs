@@ -21,6 +21,11 @@ public class AudioManager : MonoBehaviour
 
     private void Awake()
     {
+        DontDestroyOnLoad(gameObject);
+    }
+
+    private void Start()
+    {
         _sfxService = ServiceLocator.Instance.Get<SFXService>();
         _sfxService._PlaySFX += PlaySFX;
         _sfxService._PlayDeathSFX += PlayDeathSFX;
