@@ -12,8 +12,9 @@ namespace ThrillTrail.Player
     public class PlayerManager : MonoBehaviour
     {
         private PlayerMovement _playerMovement;
+        private PlayerAnimator _playerAnimator;
 
-        public float speed{ private set; get; }
+        private float speed;
         [SerializeField] private float initialSpeed = 5f;
         [SerializeField] private float speedIncreaseRatio = 0.01f;
         
@@ -21,11 +22,12 @@ namespace ThrillTrail.Player
         
         private bool _isDead = false;
 
-
+        [SerializeField] private GameObject LittleBoy;
 
         private void Awake()
         {
             _playerMovement = GetComponent<PlayerMovement>();
+            _playerAnimator = GetComponent<PlayerAnimator>();
             speed = 0;
         }
 
@@ -38,12 +40,21 @@ namespace ThrillTrail.Player
         {
             speed = initialSpeed;
             _isDead = false;
-            _playerMovement.Activate(true);
             ServiceLocator.Instance.Get<SFXService>().PlayGameplayMusic();
         }
 
         private void Update()
         {
+            if (!_isDead && Input.touchCount > 0)
+            {
+                Touch touch = Input.GetTouch(0);
+
+                if (touch.phase == TouchPhase.Began)
+                {
+                    _playerMovement.MovePlayer(touch.position, speed);
+                    
+                }
+            }
             if(!_isDead)
             {
                 GoForward();
@@ -54,7 +65,8 @@ namespace ThrillTrail.Player
         
         private void GoForward()
         {
-            transform.Translate(Vector3.forward * (speed * Time.deltaTime));
+            transform.Translate(LittleBoy.transform.forward * (speed * Time.deltaTime));
+            _playerAnimator.SetSpeed(speed>0?1:0);
         }
 
         private void IncreaseSpeed()
@@ -74,8 +86,6 @@ namespace ThrillTrail.Player
         {
             _isDead = true;
             speed = 0;
-            
-            _playerMovement.Activate(false);
             
             gameOverlayViewController.ShowDeathPanel();
             

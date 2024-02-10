@@ -5,18 +5,15 @@ using UnityEngine;
 public class PlayerAnimator : MonoBehaviour
 {
     private Animator _animator;
-    private PlayerManager _playerManager;
     
     private void Awake()
     {
         _animator = GetComponent<Animator>();
-        _playerManager = GetComponent<PlayerManager>();
     }
 
-
-    // Update is called once per frame
-    void Update()
+    public void SetSpeed(float value)
     {
-        _animator.SetFloat("speed", _playerManager.speed);
+        _animator.SetFloat("speed", value);
     }
+    
 }

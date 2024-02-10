@@ -25,7 +25,7 @@ public class StartMenuController : MonoBehaviour
     
     public void StartButtonPressed()
     {
-        Debug.Log("Start button pressed!");
+        // Debug.Log("Start button pressed!");
         _sceneLoaderService.LoadGamePlayScene();
     }
     

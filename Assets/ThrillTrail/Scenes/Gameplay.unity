@@ -2752,6 +2752,7 @@ MonoBehaviour:
   initialSpeed: 5
   speedIncreaseRatio: 0.2
   gameOverlayViewController: {fileID: 138865777}
+  LittleBoy: {fileID: 1902387986}
 --- !u!114 &6367566384384204307
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2765,6 +2766,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   corridorWidth: 1.5
+  LittleBoy: {fileID: 1902387986}
+  turnDistance: 1
 --- !u!54 &6367566384384204308
 Rigidbody:
   m_ObjectHideFlags: 0

@@ -45,12 +45,8 @@ public class AudioManager : MonoBehaviour
     //Check if the SFX are enable in playerpref and play the sound
     private void PlaySFX(AudioClip clip)
     {
-        Debug.Log("Play SFX");
-        Debug.Log("Entry exist : "+_playerPrefService.GetBool("SFX", out bool sfxEnableddebug));
-        Debug.Log("Value : "+sfxEnableddebug);
         if (_playerPrefService.GetBool("SFX", out bool sfxEnabled) && sfxEnabled)
         {
-            Debug.Log("Play SFX validated");
             _sfxSource.PlayOneShot(clip);
         }
         
@@ -64,10 +60,8 @@ public class AudioManager : MonoBehaviour
     //Check if the Music are enable in playerpref and play the sound
     public void PlayMusic(AudioClip musicClip)
     {
-        Debug.Log("Play music");
         if (_playerPrefService.GetBool("Music", out bool musicEnabled) && musicEnabled)
         {
-            Debug.Log("Play music validated");
             _musicSource.clip = musicClip;
             _musicSource.Play();
         }

@@ -1,4 +1,6 @@
 using System;
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
 namespace ThrillTrail.Player
@@ -8,53 +10,71 @@ namespace ThrillTrail.Player
         public float corridorWidth = 2f; // Adjust based on your corridor width
         private int currentCorridor = 1; // Initial corridor index
 
-        private bool activated = false;
+        [SerializeField] private GameObject LittleBoy;
+        //The distance needed to reach a new corridor
+        [SerializeField] private float turnDistance = 5f;
 
-        private void Start()
-        {
-        }
+        private float TargetX;
+        private bool TurningLeft = false;
+        private bool TurningRight = false;
 
-        void Update()
-        {
-            if (activated && Input.touchCount > 0)
-            {
-                Touch touch = Input.GetTouch(0);
-
-                if (touch.phase == TouchPhase.Began)
-                {
-                    MovePlayer(touch.position);
-                }
-            }
-        }
-
-        void MovePlayer(Vector2 touchPosition)
+        public void MovePlayer(Vector2 touchPosition, float speed)
         {
             float screenCenterX = Screen.width / 2f;
 
             if (touchPosition.x < screenCenterX - corridorWidth && currentCorridor > 0)
             {
                 // Move player to the left corridor
-                MoveToCorridor(currentCorridor - 1);
+                TargetX = (currentCorridor - 2) * corridorWidth;
+                currentCorridor = currentCorridor - 1;
+                if (!TurningLeft)
+                {
+                    TurningRight = false;
+                    TurningLeft = true;
+                    StartCoroutine(MoveToLeft(speed));
+                }
             }
-            else if (touchPosition.x > screenCenterX + corridorWidth && currentCorridor < 2)
+            
+            if (touchPosition.x > screenCenterX + corridorWidth && currentCorridor < 2)
             {
                 // Move player to the right corridor
-                MoveToCorridor(currentCorridor + 1);
+                TargetX = currentCorridor * corridorWidth;
+                currentCorridor = currentCorridor + 1;
+                if (!TurningRight)
+                {
+                    TurningLeft = false;
+                    TurningRight = true;
+                    StartCoroutine(MoveToRight(speed));
+                }
             }
         }
-
-        void MoveToCorridor(int targetCorridor)
+        
+        private IEnumerator MoveToLeft(float speed)
         {
-            // Adjust the position based on the target corridor
-            float targetX = (targetCorridor - 1) * corridorWidth;
-            transform.position = new Vector3(targetX, transform.position.y, transform.position.z);
-
-            currentCorridor = targetCorridor;
+            Vector3 targetPos = new Vector3(TargetX,0,transform.position.z + turnDistance/speed);
+            LittleBoy.transform.LookAt(targetPos, Vector3.up);
+            //Will stop when the player will reach the target x value
+            yield return new WaitWhile(() => Mathf.Abs(transform.position.x - TargetX) > 0.1f && TurningLeft);
+            
+            if(!TurningLeft) yield break;
+            
+            TurningLeft = false;
+            LittleBoy.transform.localEulerAngles = new Vector3(0,0,0);
         }
         
-        public void Activate(bool value)
+        private IEnumerator MoveToRight(float speed)
         {
-            activated = value;
+            Vector3 targetPos = new Vector3(TargetX,0,transform.position.z + turnDistance/speed);
+            LittleBoy.transform.LookAt(targetPos, Vector3.up);
+            //Will stop when the player will reach the target x value
+            yield return new WaitWhile(() => Mathf.Abs(transform.position.x - TargetX) > 0.1f && TurningRight);
+
+            if (!TurningRight) yield break;
+            
+            TurningRight = false;
+            LittleBoy.transform.localEulerAngles = new Vector3(0,0,0);
         }
+
+        
     }
 }

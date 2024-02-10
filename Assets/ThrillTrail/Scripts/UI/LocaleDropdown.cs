@@ -10,12 +10,12 @@ public class LocaleDropdown : MonoBehaviour
 
     private IEnumerator Start()
     {
-        Debug.Log("Local Start");
+        //Debug.Log("Local Start");
         // Wait for the localization system to initialize
         while (!LocalizationSettings.InitializationOperation.IsDone)
             yield return null;
 
-        Debug.Log("Local Start 2");
+        //Debug.Log("Local Start 2");
         
         // Generate list of available Locales
         var options = new List<Dropdown.OptionData>();
