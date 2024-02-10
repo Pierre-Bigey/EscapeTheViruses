@@ -8,11 +8,15 @@ public class LocaleDropdown : MonoBehaviour
 {
     public Dropdown dropdown;
 
-    IEnumerator Start()
+    private IEnumerator Start()
     {
+        Debug.Log("Local Start");
         // Wait for the localization system to initialize
-        yield return LocalizationSettings.InitializationOperation;
+        while (!LocalizationSettings.InitializationOperation.IsDone)
+            yield return null;
 
+        Debug.Log("Local Start 2");
+        
         // Generate list of available Locales
         var options = new List<Dropdown.OptionData>();
         int selected = 0;
@@ -31,6 +35,7 @@ public class LocaleDropdown : MonoBehaviour
 
     static void LocaleSelected(int index)
     {
+        Debug.Log("LocaleSelected");
         LocalizationSettings.SelectedLocale = LocalizationSettings.AvailableLocales.Locales[index];
     }
 }
