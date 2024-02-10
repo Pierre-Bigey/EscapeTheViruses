@@ -4,14 +4,13 @@ namespace ThrillTrail.Services
 {
     public class PlayerPrefService : IGameService
     {
+        #region Get/Set Methods
         public void SetFloat(string key, float value)
         {
             PlayerPrefs.SetFloat(key, value);
             PlayerPrefs.Save();
         }
         
-        #region Get/Set Methods
-
         public bool GetFloat(string key, out float value)
         {
             if(PlayerPrefs.HasKey(key))
@@ -22,7 +21,6 @@ namespace ThrillTrail.Services
             value = 0;
             return false;
         }
-
         
         public void SetInt(string key, int value)
         {
@@ -61,6 +59,23 @@ namespace ThrillTrail.Services
         public void DeleteKey(string key)
         {
             PlayerPrefs.DeleteKey(key);
+        }
+
+        public void SetBool(string key, bool value)
+        {
+            PlayerPrefs.SetInt(key, value ? 1 : 0);
+            PlayerPrefs.Save();
+        }
+        
+        public bool GetBool(string key, out bool value)
+        {
+            if(PlayerPrefs.HasKey(key))
+            {
+                value = PlayerPrefs.GetInt(key) == 1;
+                return true;
+            }
+            value = false;
+            return false;
         }
 
         #endregion

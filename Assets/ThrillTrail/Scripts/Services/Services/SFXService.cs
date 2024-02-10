@@ -9,11 +9,13 @@ namespace ThrillTrail.Services
         public Action _PlayDeathSFX;
         public Action _PlayButtonClickedSFX;
         public Action _PlayGameplayMusic;
+        public Action _StopMusic;
         
         public void Play(AudioClip clip)
         {
             _PlaySFX?.Invoke(clip);
         }
+        
         
         public void PlayDeathSFX()
         {
@@ -30,6 +32,13 @@ namespace ThrillTrail.Services
         {
             _PlayGameplayMusic?.Invoke();
         }
+        
+        //Stop Music
+        public void StopMusic()
+        {
+            _StopMusic?.Invoke();
+        }
+        
         
     }
 }

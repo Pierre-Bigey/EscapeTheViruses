@@ -83,7 +83,9 @@ namespace ThrillTrail.Player
             ServiceLocator.Instance.Get<PlayerPrefService>().SetInt("HighScore", (int)transform.position.z);
             
             //Trigger the death SFX action
-            ServiceLocator.Instance.Get<SFXService>().PlayDeathSFX();
+            var _SFXService = ServiceLocator.Instance.Get<SFXService>();
+            _SFXService.PlayDeathSFX();
+            _SFXService.StopMusic();
         }
     }
 }

@@ -1,12 +1,36 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
+using ThrillTrail.Services;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class SettingCanvaController : MonoBehaviour
 {
     [SerializeField] private GameObject _MainScreen;
     [SerializeField] private GameObject _SettingsScreen;
+    
+    //The toggle references
+    [SerializeField] private Toggle _SFXToggle;
+    [SerializeField] private Toggle _MusicToggle;
+    [SerializeField] private Toggle _VibrationToggle;
+    
+    private PlayerPrefService _playerPrefService;
 
+
+    private void Start()
+    {
+        _playerPrefService = ServiceLocator.Instance.Get<PlayerPrefService>();
+        
+        //Set the toogle following the playerpref
+        if(_playerPrefService.GetBool("SFX", out bool sfxEnabled))
+            _SFXToggle.isOn = !sfxEnabled;
+        if(_playerPrefService.GetBool("Music", out bool musicEnabled))
+            _MusicToggle.isOn = !musicEnabled;
+        if(_playerPrefService.GetBool("Vibration", out bool vibrationEnabled))
+            _VibrationToggle.isOn = !vibrationEnabled;
+        
+    }
 
     public void BackButtonPressed()
     {
@@ -14,19 +38,19 @@ public class SettingCanvaController : MonoBehaviour
         _MainScreen.SetActive(true);
     }
 
-    public void SoundButtonPressed()
+    public void SFXButtonPressed(bool value)
     {
-        Debug.Log("Sound button pressed!");
+        _playerPrefService.SetBool("SFX", !value);
     }
 
-    public void MusicButtonPressed()
+    public void MusicButtonPressed(bool value)
     {
-        Debug.Log("Music button pressed!");
+        _playerPrefService.SetBool("Music", !value);
     }
 
-    public void VibrationButtonPressed()
+    public void VibrationButtonPressed(bool value)
     {
-        Debug.Log("Vibration button pressed!");
+        _playerPrefService.SetBool("Vibration", value);
     }
 
     public void ResetButtonPressed()

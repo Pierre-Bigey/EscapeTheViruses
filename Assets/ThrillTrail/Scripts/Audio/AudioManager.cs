@@ -18,6 +18,7 @@ public class AudioManager : MonoBehaviour
     [SerializeField] private AudioClip gameplayMusic;
     
     SFXService _sfxService;
+    PlayerPrefService _playerPrefService;
 
     private void Awake()
     {
@@ -27,39 +28,55 @@ public class AudioManager : MonoBehaviour
     private void Start()
     {
         _sfxService = ServiceLocator.Instance.Get<SFXService>();
+        _playerPrefService = ServiceLocator.Instance.Get<PlayerPrefService>();
+        
         _sfxService._PlaySFX += PlaySFX;
         _sfxService._PlayDeathSFX += PlayDeathSFX;
         _sfxService._PlayButtonClickedSFX += PlayButtonClickedSFX;
         _sfxService._PlayGameplayMusic += PlayGameplayMusic;
+        _sfxService._StopMusic += StopMusic;
     }
 
     public void PlayDeathSFX()
     {
-        _sfxSource.PlayOneShot(deathSFX);
+        PlaySFX(deathSFX);
     }
     
-    public void PlaySFX(AudioClip clip)
+    //Check if the SFX are enable in playerpref and play the sound
+    private void PlaySFX(AudioClip clip)
     {
-        _sfxSource.PlayOneShot(clip);
+        Debug.Log("Play SFX");
+        Debug.Log("Entry exist : "+_playerPrefService.GetBool("SFX", out bool sfxEnableddebug));
+        Debug.Log("Value : "+sfxEnableddebug);
+        if (_playerPrefService.GetBool("SFX", out bool sfxEnabled) && sfxEnabled)
+        {
+            Debug.Log("Play SFX validated");
+            _sfxSource.PlayOneShot(clip);
+        }
+        
     }
     
     public void PlayButtonClickedSFX()
     {
-        _sfxSource.PlayOneShot(buttonClickedSFX);
+        PlaySFX(buttonClickedSFX);
     }
     
-    
+    //Check if the Music are enable in playerpref and play the sound
     public void PlayMusic(AudioClip musicClip)
     {
-        _musicSource.clip = musicClip;
-        _musicSource.Play();
+        Debug.Log("Play music");
+        if (_playerPrefService.GetBool("Music", out bool musicEnabled) && musicEnabled)
+        {
+            Debug.Log("Play music validated");
+            _musicSource.clip = musicClip;
+            _musicSource.Play();
+        }
     }
     
     public void PlayGameplayMusic()
     {
         PlayMusic(gameplayMusic);
     }
-
     
     public void StopMusic()
     {

@@ -19,7 +19,7 @@ namespace ThrillTrail.Services
             ServiceLocator.Instance.Register<IMyGameServiceC>(new MyGameServiceC());*/
 
             // Application is ready to start, load your main scene.
-            SceneManager.LoadSceneAsync(1,LoadSceneMode.Single);
+            SceneManager.LoadSceneAsync(0,LoadSceneMode.Single);
         }
     }
 }
