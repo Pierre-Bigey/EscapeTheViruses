@@ -86,6 +86,8 @@ namespace ThrillTrail.Player
         {
             _isDead = true;
             speed = 0;
+            //trigger the death animation in the _playerAnimator
+            _playerAnimator.Die();
             
             gameOverlayViewController.ShowDeathPanel();
             

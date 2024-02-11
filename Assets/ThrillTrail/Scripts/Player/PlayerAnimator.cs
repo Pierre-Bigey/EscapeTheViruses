@@ -15,5 +15,10 @@ public class PlayerAnimator : MonoBehaviour
     {
         _animator.SetFloat("speed", value);
     }
+
+    public void Die()
+    {
+        _animator.SetTrigger("die");
+    }
     
 }
