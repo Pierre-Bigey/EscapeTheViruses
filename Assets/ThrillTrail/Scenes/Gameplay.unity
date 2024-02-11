@@ -2767,7 +2767,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   corridorWidth: 1.5
   LittleBoy: {fileID: 1902387986}
-  turnDistance: 1
+  turnDistance: 10
 --- !u!54 &6367566384384204308
 Rigidbody:
   m_ObjectHideFlags: 0
