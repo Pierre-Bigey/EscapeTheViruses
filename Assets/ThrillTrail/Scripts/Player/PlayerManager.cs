@@ -98,6 +98,9 @@ namespace ThrillTrail.Player
             var _SFXService = ServiceLocator.Instance.Get<SFXService>();
             _SFXService.PlayDeathSFX();
             _SFXService.StopMusic();
+            
+            //Make the phone vibrate for 1 second
+            Vibration.Vibrate(1000);
         }
     }
 }
