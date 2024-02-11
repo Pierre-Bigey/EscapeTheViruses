@@ -12,7 +12,7 @@ namespace ThrillTrail.Player
 
         [SerializeField] private GameObject LittleBoy;
         //The distance needed to reach a new corridor
-        [SerializeField] private float turnDistance = 5f;
+        [SerializeField] private float turnDistance = 10f;
 
         private float TargetX;
         private bool TurningLeft = false;
@@ -54,7 +54,7 @@ namespace ThrillTrail.Player
             Vector3 targetPos = new Vector3(TargetX,0,transform.position.z + turnDistance/speed);
             LittleBoy.transform.LookAt(targetPos, Vector3.up);
             //Will stop when the player will reach the target x value
-            yield return new WaitWhile(() => Mathf.Abs(transform.position.x - TargetX) > 0.1f && TurningLeft);
+            yield return new WaitWhile(() => transform.position.x > TargetX && TurningLeft);
             
             if(!TurningLeft) yield break;
             
@@ -67,7 +67,7 @@ namespace ThrillTrail.Player
             Vector3 targetPos = new Vector3(TargetX,0,transform.position.z + turnDistance/speed);
             LittleBoy.transform.LookAt(targetPos, Vector3.up);
             //Will stop when the player will reach the target x value
-            yield return new WaitWhile(() => Mathf.Abs(transform.position.x - TargetX) > 0.1f && TurningRight);
+            yield return new WaitWhile(() => transform.position.x < TargetX && TurningRight);
 
             if (!TurningRight) yield break;
             
