@@ -2753,6 +2753,7 @@ MonoBehaviour:
   speedIncreaseRatio: 0.2
   gameOverlayViewController: {fileID: 138865777}
   LittleBoy: {fileID: 1902387986}
+  deathDelay: 1
 --- !u!114 &6367566384384204307
 MonoBehaviour:
   m_ObjectHideFlags: 0

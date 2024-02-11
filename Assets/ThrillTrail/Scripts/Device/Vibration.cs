@@ -1,5 +1,6 @@
 using UnityEngine;
 using System.Collections;
+using ThrillTrail.Services;
 
 public static class Vibration
 {

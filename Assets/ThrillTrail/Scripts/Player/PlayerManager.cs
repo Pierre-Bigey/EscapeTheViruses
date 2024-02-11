@@ -13,6 +13,9 @@ namespace ThrillTrail.Player
     {
         private PlayerMovement _playerMovement;
         private PlayerAnimator _playerAnimator;
+        
+        //Services 
+        private VibrationService _vibrationService;
 
         private float speed;
         [SerializeField] private float initialSpeed = 5f;
@@ -24,6 +27,8 @@ namespace ThrillTrail.Player
 
         [SerializeField] private GameObject LittleBoy;
 
+        [SerializeField] private float deathDelay = 0.5f;
+
         private void Awake()
         {
             _playerMovement = GetComponent<PlayerMovement>();
@@ -33,6 +38,8 @@ namespace ThrillTrail.Player
 
         private void Start()
         {
+            _vibrationService = ServiceLocator.Instance.Get<VibrationService>();
+            
             StartEndlessRun();
         }
 
@@ -89,7 +96,7 @@ namespace ThrillTrail.Player
             //trigger the death animation in the _playerAnimator
             _playerAnimator.Die();
             
-            gameOverlayViewController.ShowDeathPanel();
+            gameOverlayViewController.ShowDeathPanel(deathDelay);
             
             //Update the high score
             ServiceLocator.Instance.Get<PlayerPrefService>().SetInt("HighScore", (int)transform.position.z);
@@ -100,7 +107,7 @@ namespace ThrillTrail.Player
             _SFXService.StopMusic();
             
             //Make the phone vibrate for 1 second
-            Vibration.Vibrate(1000);
+            _vibrationService.Vibrate(1000*deathDelay);
         }
     }
 }

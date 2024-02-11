@@ -24,8 +24,14 @@ public class GameOverlayViewController : MonoBehaviour
     }
     
     //When the player dies we show the death panel
-    public void ShowDeathPanel()
+    public void ShowDeathPanel(float delay)
     {
+        StartCoroutine(ShowDeathPanelCoroutine(delay));
+    }
+    //The ShowDeathPanelCoroutine
+    private IEnumerator ShowDeathPanelCoroutine(float delay)
+    {
+        yield return new WaitForSeconds(delay);
         m_gameOverPanel.SetActive(true);
     }
     

@@ -50,7 +50,7 @@ public class SettingCanvaController : MonoBehaviour
 
     public void VibrationButtonPressed(bool value)
     {
-        _playerPrefService.SetBool("Vibration", value);
+        _playerPrefService.SetBool("Vibration", !value);
     }
 
     public void ResetButtonPressed()
