@@ -108,10 +108,8 @@ MonoBehaviour:
   maxSpeed: 3
   minRotationSpeed: 50
   maxRotationSpeed: 150
-  xMargin: 0.5
-  yMargin: 0.5
-  minZ: 5
-  maxZ: 15
+  xMargin: 0
+  yMargin: 0
 --- !u!1 &4209406692725588238
 GameObject:
   m_ObjectHideFlags: 0
