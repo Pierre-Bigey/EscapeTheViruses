@@ -22,7 +22,9 @@ public class MainMenuVirusManager : MonoBehaviour
         for (int i = 0; i < amount; i++)
         {
             float zValue = Random.Range(minZ, maxZ);
-            GameObject virus = Instantiate(virusPrefab, new Vector3(0,0,zValue),Quaternion.identity,transform);
+            GameObject virus = Instantiate(virusPrefab, new Vector3(0,0,0),Quaternion.identity,transform);
+            virus.GetComponent<MeshCombiner>().CombineMeshes();
+            virus.GetComponent<VirusWander>().Initialize(zValue);
         }
     }
 }

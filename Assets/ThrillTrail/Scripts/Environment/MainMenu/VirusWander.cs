@@ -37,9 +37,9 @@ public class VirusWander : MonoBehaviour
     private float xMax;
     private float yMax;
     
-    private void Start()
+    public void Initialize(float zValue)
     {
-        float zValue = transform.position.z;
+         
         
         //xMax and yMax are the delimitation of the wandering zone, they are calculated from the camera parameters and the zvalue, so that 
         //the xmax corresponds to the right border of the screen and the ymax to the top border of the screen at this z value
