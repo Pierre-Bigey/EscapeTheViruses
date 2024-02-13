@@ -1,36 +1,38 @@
-# Thrill Trail
-
-Welcome to Thrill Trail, an exhilarating endless runner game that challenges your reflexes and takes you on a high-speed adventure!
+# Escape The Viruses 🏃‍♂️💨🦠
 
 ## Overview
+"Escape The Viruses" is an exciting endless runner mobile game designed for Android devices. In this fast-paced adventure, you control a brave little boy racing through a hospital corridor, facing the challenge of escaping viruses that appear on his way.
 
-Thrill Trail is a fast-paced mobile game where players navigate an ever-changing trail, avoiding obstacles and racing against the clock. How far can you go without tripping up?
+## How to Play 🎮
+- **Tap Left or Right:** Control the movement of the player by tapping on the left or right side of the screen.
+- **Endless Runner:** Your goal is to go as far as you can in the hospital corridor. The game features progressively increasing speed for added intensity.
 
-<!--![Thrill Trail Gameplay](link_to_gameplay_image.png)-->
+## Features 🌟
+- **Optimized Graphics:** Experience smooth gameplay with optimized virus models for fluid animation.
+- **Endless Challenge:** Test your reflexes and see how far you can go in this endless runner. The speed increases as you progress, providing an ever-growing challenge.
+- **Intuitive Controls:** Easy-to-use controls with simple taps for quick and responsive movements.
 
-## Features
+## Screenshots 📸
+![The menu](Screenshots/MainMenu.png)
+![The gameplay](Screenshots/GamePlay1.png)
+![The death overlay](Screenshots/Dead.png)
+![The settings menu](Screenshots/Settings.png)
 
-- **Infinite Adventure:** Experience an endless runner with procedurally generated terrain for a unique challenge every time you play.
-- **Obstacle Avoidance:** Dodge obstacles and test your reflexes as you sprint through the dynamic trail.
-- **Scoring System:** Compete against yourself and others by achieving high scores based on distance covered.
 
-## Getting Started
+## Requirements 📱
+- Android 5.1 "Lollipop" (API level 22) or higher.
 
-### Prerequisites
+<!--## Installation 🚀
+1. Download the APK file from [Release Page](release_url).
+2. Install the APK on your Android device.
+3. Enjoy the thrilling adventure of "Escape The Viruses"!-->
 
-- Unity (version 2022.3.19)
+## Development Details 🛠️
+- **Unity Version:** 2022.3.19
+- **Platform:** Android
+- **Dependencies:** Unity (version), Android SDK (version)
 
-### Installation
+## Feedback and Issues 🤝
+If you encounter any issues or have suggestions for improvement, feel free to [open an issue](https://github.com/Pierre-Bigey/EscapeTheViruses/issues) on our GitHub repository.
 
-1. Clone the repository: `git clone https://github.com/Pierre-Bigey/ThrillTrail.git`
-2. Open the project in Unity.
-3. Run the game in the Unity Editor or build it for your preferred platform.
-
-## Screenshots
-<!--
-![Screenshot 1](link_to_screenshot_1.png)
-![Screenshot 2](link_to_screenshot_2.png)-->
-
-## Contributing
-
-Contributions are welcome! If you have ideas for new features, improvements, or bug fixes, please create an issue or submit a pull request.
+© 2024 Pierre Bigey
