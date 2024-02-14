@@ -512,15 +512,15 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 233632291}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -0.0000160963}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 878175062}
   m_Father: {fileID: 1359948493}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.15, y: 0.35}
-  m_AnchorMax: {x: 0.85, y: 0.55}
+  m_AnchorMin: {x: 0.15, y: 0.2}
+  m_AnchorMax: {x: 0.85, y: 0.4}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -844,25 +844,21 @@ MonoBehaviour:
         m_Target: {fileID: 878175064}
         m_TrackedProperties:
           items:
-          - rid: 5009810576675962890
+          - rid: 5009810707789119516
         m_UpdateType: 0
-    - rid: 5009810576675962890
-      type: {class: StringTrackedProperty, ns: UnityEngine.Localization.PropertyVariants.TrackedProperties, asm: Unity.Localization}
+    - rid: 5009810707789119516
+      type: {class: LocalizedStringProperty, ns: UnityEngine.Localization.PropertyVariants.TrackedProperties, asm: Unity.Localization}
       data:
+        m_Localized:
+          m_TableReference:
+            m_TableCollectionName: GUID:62f19bf18be80104ea9b8e92d3081cab
+          m_TableEntryReference:
+            m_KeyId: 1425374519296
+            m_Key: 
+          m_FallbackState: 0
+          m_WaitForCompletion: 0
+          m_LocalVariables: []
         m_PropertyPath: m_text
-        m_VariantData:
-        - localeIdentifier:
-            m_Code: en
-          value: Menu
-        - localeIdentifier:
-            m_Code: fr
-          value: Menu
-        - localeIdentifier:
-            m_Code: de
-          value: Menu
-        - localeIdentifier:
-            m_Code: es
-          value: Menu
 --- !u!114 &878175064
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -910,7 +906,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 150
+  m_fontSize: 145.05
   m_fontSizeBase: 24
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -994,8 +990,8 @@ RectTransform:
   - {fileID: 972130238}
   m_Father: {fileID: 1359948493}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.15, y: 0.65}
-  m_AnchorMax: {x: 0.85, y: 0.85}
+  m_AnchorMin: {x: 0.15, y: 0.55}
+  m_AnchorMax: {x: 0.85, y: 0.75}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -1154,31 +1150,21 @@ MonoBehaviour:
         m_Target: {fileID: 972130240}
         m_TrackedProperties:
           items:
-          - rid: 5009810576675962887
-          - rid: 5009810576675962888
+          - rid: 5009810707789119515
         m_UpdateType: 0
-    - rid: 5009810576675962887
-      type: {class: StringTrackedProperty, ns: UnityEngine.Localization.PropertyVariants.TrackedProperties, asm: Unity.Localization}
+    - rid: 5009810707789119515
+      type: {class: LocalizedStringProperty, ns: UnityEngine.Localization.PropertyVariants.TrackedProperties, asm: Unity.Localization}
       data:
+        m_Localized:
+          m_TableReference:
+            m_TableCollectionName: GUID:62f19bf18be80104ea9b8e92d3081cab
+          m_TableEntryReference:
+            m_KeyId: 1163377319936
+            m_Key: 
+          m_FallbackState: 0
+          m_WaitForCompletion: 0
+          m_LocalVariables: []
         m_PropertyPath: m_text
-        m_VariantData:
-        - localeIdentifier:
-            m_Code: en
-          value: Restart
-        - localeIdentifier:
-            m_Code: fr
-          value: Recommencer
-    - rid: 5009810576675962888
-      type: {class: FloatTrackedProperty, ns: UnityEngine.Localization.PropertyVariants.TrackedProperties, asm: Unity.Localization}
-      data:
-        m_PropertyPath: m_fontSize
-        m_VariantData:
-        - localeIdentifier:
-            m_Code: en
-          value: 150
-        - localeIdentifier:
-            m_Code: fr
-          value: 51.1
 --- !u!114 &972130240
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1226,7 +1212,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 72
+  m_fontSize: 115.6
   m_fontSizeBase: 24
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -1353,7 +1339,7 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1045667004}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -1431,7 +1417,7 @@ RectTransform:
   m_Father: {fileID: 1045667005}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 0.7}
+  m_AnchorMax: {x: 1, y: 0.4}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -1766,27 +1752,23 @@ MonoBehaviour:
         m_Target: {fileID: 1951745866}
         m_TrackedProperties:
           items:
-          - rid: 5009810576675962892
-          - rid: 5009810576675962893
+          - rid: 5009810707789119509
+          - rid: 5009810707789119510
         m_UpdateType: 0
-    - rid: 5009810576675962892
-      type: {class: StringTrackedProperty, ns: UnityEngine.Localization.PropertyVariants.TrackedProperties, asm: Unity.Localization}
+    - rid: 5009810707789119509
+      type: {class: LocalizedStringProperty, ns: UnityEngine.Localization.PropertyVariants.TrackedProperties, asm: Unity.Localization}
       data:
+        m_Localized:
+          m_TableReference:
+            m_TableCollectionName: GUID:62f19bf18be80104ea9b8e92d3081cab
+          m_TableEntryReference:
+            m_KeyId: 323426000896
+            m_Key: 
+          m_FallbackState: 0
+          m_WaitForCompletion: 0
+          m_LocalVariables: []
         m_PropertyPath: m_text
-        m_VariantData:
-        - localeIdentifier:
-            m_Code: en
-          value: You died, try again
-        - localeIdentifier:
-            m_Code: fr
-          value: "Tu es mort, r\xE9-essaie"
-        - localeIdentifier:
-            m_Code: de
-          value: Du bist tot...
-        - localeIdentifier:
-            m_Code: es
-          value: Erres muerto, re empeza
-    - rid: 5009810576675962893
+    - rid: 5009810707789119510
       type: {class: FloatTrackedProperty, ns: UnityEngine.Localization.PropertyVariants.TrackedProperties, asm: Unity.Localization}
       data:
         m_PropertyPath: m_fontSize
@@ -1795,8 +1777,8 @@ MonoBehaviour:
             m_Code: en
           value: 200
         - localeIdentifier:
-            m_Code: es
-          value: 176.9
+            m_Code: fr
+          value: 200
 --- !u!114 &1951745866
 MonoBehaviour:
   m_ObjectHideFlags: 0

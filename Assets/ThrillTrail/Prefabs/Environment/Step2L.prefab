@@ -216,11 +216,11 @@ GameObject:
   - component: {fileID: 1220051079955989086}
   - component: {fileID: 1428066340938408450}
   m_Layer: 0
-  m_Name: Cube
+  m_Name: Floor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &2192035343580736601
 Transform:
@@ -487,6 +487,34 @@ PrefabInstance:
       propertyPath: m_Name
       value: Virus
       objectReference: {fileID: 0}
+    - target: {fileID: 4884752529884901403, guid: 55a93a81fb222ee468d42121262d3bc8, type: 3}
+      propertyPath: CollisionModule.type
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4884752529884901403, guid: 55a93a81fb222ee468d42121262d3bc8, type: 3}
+      propertyPath: CollisionModule.quality
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4884752529884901403, guid: 55a93a81fb222ee468d42121262d3bc8, type: 3}
+      propertyPath: CollisionModule.voxelSize
+      value: 0.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4884752529884901403, guid: 55a93a81fb222ee468d42121262d3bc8, type: 3}
+      propertyPath: CollisionModule.m_Planes.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4884752529884901403, guid: 55a93a81fb222ee468d42121262d3bc8, type: 3}
+      propertyPath: CollisionModule.m_Planes.Array.data[0]
+      value: 
+      objectReference: {fileID: 2192035343580736601}
+    - target: {fileID: 4884752529884901403, guid: 55a93a81fb222ee468d42121262d3bc8, type: 3}
+      propertyPath: CollisionModule.m_Planes.Array.data[1]
+      value: 
+      objectReference: {fileID: 8639484184843554966}
+    - target: {fileID: 4884752529884901403, guid: 55a93a81fb222ee468d42121262d3bc8, type: 3}
+      propertyPath: CollisionModule.m_Planes.Array.data[2]
+      value: 
+      objectReference: {fileID: 6002966293673090854}
     - target: {fileID: 9100281600035339822, guid: 55a93a81fb222ee468d42121262d3bc8, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -549,6 +577,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Virus (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 4884752529884901403, guid: 55a93a81fb222ee468d42121262d3bc8, type: 3}
+      propertyPath: CollisionModule.m_Planes.Array.data[0]
+      value: 
+      objectReference: {fileID: 2192035343580736601}
     - target: {fileID: 9100281600035339822, guid: 55a93a81fb222ee468d42121262d3bc8, type: 3}
       propertyPath: m_LocalPosition.x
       value: 1.5

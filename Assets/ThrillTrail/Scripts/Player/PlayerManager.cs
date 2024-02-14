@@ -85,6 +85,7 @@ namespace ThrillTrail.Player
         {
             if (other.gameObject.CompareTag("Danger") && !_isDead)
             {
+                other.gameObject.GetComponent<VirusController>().PlayerTouched();
                 Die();
             }
         }

@@ -10,24 +10,36 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e9620f8c34305754d8cc9a7e49e852d9, type: 3}
-  m_Name: StartUI_de
+  m_Name: SettingsTable_de
   m_EditorClassIdentifier: 
   m_LocaleId:
     m_Code: de
-  m_SharedData: {fileID: 11400000, guid: e94ea9f17a50c104a992d28979884dee, type: 2}
+  m_SharedData: {fileID: 11400000, guid: 11de127435ff8ab49bbfd45810bd57e7, type: 2}
   m_Metadata:
     m_Items: []
   m_TableData:
-  - m_Id: 681451166097408
-    m_Localized: 'Highscore :'
+  - m_Id: 100716847104
+    m_Localized: Einstellungen
     m_Metadata:
       m_Items: []
-  - m_Id: 2394328260485120
-    m_Localized: Start
+  - m_Id: 337854406656
+    m_Localized: 'Sprache :'
     m_Metadata:
       m_Items: []
-  - m_Id: 2394763008483328
-    m_Localized: Ausfahrt
+  - m_Id: 707049627648
+    m_Localized: 'Musik :'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 960498835456
+    m_Localized: 'Effekte :'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1309636894720
+    m_Localized: 'Vibrationen :'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1532127944704
+    m_Localized: "Zur\xFCck"
     m_Metadata:
       m_Items: []
   references:

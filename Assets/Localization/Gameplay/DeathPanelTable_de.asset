@@ -10,24 +10,24 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e9620f8c34305754d8cc9a7e49e852d9, type: 3}
-  m_Name: StartUI_de
+  m_Name: DeathPanelTable_de
   m_EditorClassIdentifier: 
   m_LocaleId:
     m_Code: de
-  m_SharedData: {fileID: 11400000, guid: e94ea9f17a50c104a992d28979884dee, type: 2}
+  m_SharedData: {fileID: 11400000, guid: 62f19bf18be80104ea9b8e92d3081cab, type: 2}
   m_Metadata:
     m_Items: []
   m_TableData:
-  - m_Id: 681451166097408
-    m_Localized: 'Highscore :'
+  - m_Id: 323426000896
+    m_Localized: Du bist tot... Versuch's noch einmal
     m_Metadata:
       m_Items: []
-  - m_Id: 2394328260485120
-    m_Localized: Start
+  - m_Id: 1163377319936
+    m_Localized: Neu anfangen
     m_Metadata:
       m_Items: []
-  - m_Id: 2394763008483328
-    m_Localized: Ausfahrt
+  - m_Id: 1425374519296
+    m_Localized: "Men\xFC"
     m_Metadata:
       m_Items: []
   references:

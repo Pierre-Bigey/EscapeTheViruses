@@ -10,31 +10,31 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5b11a58205ec3474ca216360e9fa74a8, type: 3}
-  m_Name: StartUI Shared Data
+  m_Name: DeathPanelTable Shared Data
   m_EditorClassIdentifier: 
-  m_TableCollectionName: StartUI
-  m_TableCollectionNameGuidString: e94ea9f17a50c104a992d28979884dee
+  m_TableCollectionName: DeathPanelTable
+  m_TableCollectionNameGuidString: 62f19bf18be80104ea9b8e92d3081cab
   m_Entries:
-  - m_Id: 681451166097408
-    m_Key: MainMenu/MainCanvas/MainScreen/Score/Text
+  - m_Id: 323426000896
+    m_Key: Gameplay/Overlay/GameOver/Text (TMP)
     m_Metadata:
       m_Items: []
-  - m_Id: 2394328260485120
-    m_Key: MainMenu/MainCanvas/MainScreen/Start/Button/Text (TMP)
+  - m_Id: 1163377319936
+    m_Key: Gameplay/Overlay/GameOver/Buttons/RestartButton/Text (TMP)
     m_Metadata:
       m_Items: []
-  - m_Id: 2394763008483328
-    m_Key: MainMenu/MainCanvas/MainScreen/Exit/Button/Text (TMP) 1
+  - m_Id: 1425374519296
+    m_Key: Gameplay/Overlay/GameOver/Buttons/MenuButton/Text (TMP)
     m_Metadata:
       m_Items: []
   m_Metadata:
     m_Items: []
   m_KeyGenerator:
-    rid: 5009810558177771522
+    rid: 5009810707789119508
   references:
     version: 2
     RefIds:
-    - rid: 5009810558177771522
+    - rid: 5009810707789119508
       type: {class: DistributedUIDGenerator, ns: UnityEngine.Localization.Tables, asm: Unity.Localization}
       data:
-        m_CustomEpoch: 1707330830122
+        m_CustomEpoch: 1707902481805

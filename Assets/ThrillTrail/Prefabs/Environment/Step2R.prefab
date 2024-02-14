@@ -487,6 +487,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Virus (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 4884752529884901403, guid: 55a93a81fb222ee468d42121262d3bc8, type: 3}
+      propertyPath: CollisionModule.m_Planes.Array.data[0]
+      value: 
+      objectReference: {fileID: 2192035343580736601}
     - target: {fileID: 9100281600035339822, guid: 55a93a81fb222ee468d42121262d3bc8, type: 3}
       propertyPath: m_LocalPosition.x
       value: -1.5
@@ -549,6 +553,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Virus
       objectReference: {fileID: 0}
+    - target: {fileID: 4884752529884901403, guid: 55a93a81fb222ee468d42121262d3bc8, type: 3}
+      propertyPath: CollisionModule.m_Planes.Array.data[0]
+      value: 
+      objectReference: {fileID: 2192035343580736601}
     - target: {fileID: 9100281600035339822, guid: 55a93a81fb222ee468d42121262d3bc8, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0

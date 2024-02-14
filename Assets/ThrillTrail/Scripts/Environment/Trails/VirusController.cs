@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-//Mainly used to make the virus rotate and float in the air
+//Mainly used to make the virus rotate and float in the air and make him emit particle when he dies
 public class VirusController : MonoBehaviour
 {
     [SerializeField] private bool animate;
@@ -18,6 +18,8 @@ public class VirusController : MonoBehaviour
     private float rotationspeed;
     private float floatspeed;
     private float floatamplitude;
+    
+    private ParticleSystem _particleSystem;
 
     private void OnEnable()
     {
@@ -29,6 +31,7 @@ public class VirusController : MonoBehaviour
         //The float amplitude is randomly set so that each virus has a different float amplitude
         floatamplitude = Random.Range(_minfloatAmplitude, _maxfloatAmplitude);
         
+        _particleSystem = GetComponentInChildren<ParticleSystem>();
     }
 
     // Update is called once per frame
@@ -40,5 +43,16 @@ public class VirusController : MonoBehaviour
             transform.localPosition = _initialPosition + Vector3.up * (Mathf.Sin(Time.time * floatspeed) * floatamplitude);
         }
         
+    }
+    
+    /// <summary>
+    /// When the player touch this virus, it will die and emit particle
+    /// </summary>
+    public void PlayerTouched()
+    {
+        _particleSystem.Play();
+        animate = false;
+        transform.GetChild(0).gameObject.SetActive(false);
+        Destroy(gameObject, 1.5f);
     }
 }

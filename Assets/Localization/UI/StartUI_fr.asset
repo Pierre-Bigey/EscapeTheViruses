@@ -22,6 +22,14 @@ MonoBehaviour:
     m_Localized: 'Meilleur Score :'
     m_Metadata:
       m_Items: []
+  - m_Id: 2394328260485120
+    m_Localized: Commencer
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2394763008483328
+    m_Localized: Quitter
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []
