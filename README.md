@@ -18,7 +18,6 @@
 ![The death overlay](Screenshots/Dead.png)
 ![The settings menu](Screenshots/Settings.png)
 
-
 ## Requirements 📱
 - Android 5.1 "Lollipop" (API level 22) or higher.
 
@@ -32,7 +31,9 @@
 - **Platform:** Android
 - **Dependencies:** Unity (version), Android SDK (version)
 
-## Feedback and Issues 🤝
-If you encounter any issues or have suggestions for improvement, feel free to [open an issue](https://github.com/Pierre-Bigey/EscapeTheViruses/issues) on our GitHub repository.
+## Project Purpose 🎓
+This project, while approached with seriousness, is not aimed at becoming the most played Android game. Instead, its primary goal is to serve as a practice ground for mobile game development and an experimentation platform for delivering a complete application on the Play Store.
+
+If you have any suggestions, improvements, or contributions to make, you are more than welcome! Feel free to [open an issue](https://github.com/Pierre-Bigey/EscapeTheViruses/issues) on our GitHub repository.
 
 © 2024 Pierre Bigey
